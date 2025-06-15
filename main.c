@@ -4,13 +4,11 @@
 
 #define MAKS_SAMOCHODOW 20
 
-// Tablice na dane
 char car_brand[MAKS_SAMOCHODOW][50];
 int years[MAKS_SAMOCHODOW];
 char car_registration[MAKS_SAMOCHODOW][20];
 int car_mileage[MAKS_SAMOCHODOW];
 
-// Dodawanie samochodu
 void AddCar(int *count_car) {
     if (*count_car >= MAKS_SAMOCHODOW) {
         printf("Osiagnieto limit samochodow.\n");
@@ -32,7 +30,6 @@ void AddCar(int *count_car) {
     (*count_car)++;
 }
 
-// Wyświetlanie samochodów
 void view_cars(int car_numbers) {
     if (car_numbers == 0) {
         printf("Brak zapisanych samochodow.\n");
@@ -44,7 +41,6 @@ void view_cars(int car_numbers) {
     }
 }
 
-// Zapis do pliku
 void save_to_file(int car_numbers) {
     FILE *plik = fopen("samochody.txt", "w");
     if (plik == NULL) {
@@ -60,7 +56,6 @@ void save_to_file(int car_numbers) {
     printf("Dane zapisano do pliku.\n");
 }
 
-// Wczytywanie z pliku (bez dziwnych znaków)
 void load_from_file(int *car_numbers) {
     FILE *plik = fopen("samochody.txt", "r");
     if (plik == NULL) {
@@ -81,7 +76,6 @@ void load_from_file(int *car_numbers) {
     printf("Dane wczytano z pliku.\n");
 }
 
-// Główne menu
 int main() {
     int car_numbers = 0;
     int choice;
